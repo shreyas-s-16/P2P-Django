@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkSnip — Fast URL Shortener & Analytics</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'/><path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="navbar-inner">
+        <div style="display: flex; align-items: center; gap: 2.25rem;">
+          <a href="/" class="brand-wrap">
+            <div class="brand-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" stroke="none">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <span class="brand-name">LinkSnip</span>
+          </a>
+
+          <nav class="nav-links">
+            <a href="#about" class="nav-link-item">About</a>
+            <a href="#analytics" class="nav-link-item">Analytics</a>
+            <a href="#docs" class="nav-link-item">Docs</a>
+          </nav>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <a
+            href="https://github.com/XOps-Club/Prompt2Patch"
+            target="_blank"
+            rel="noreferrer"
+            class="btn-github"
+            title="GitHub Repository"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid rgba(255, 255, 255, 0.08); background: rgba(7, 8, 12, 0.95); padding: 2rem 1.5rem; text-align: center; color: var(--text-faint); font-size: 0.8rem; font-family: var(--font-mono);">
+      <div style="max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <span>LinkSnip Analytics Engine · Built for high throughput edge redirects</span>
+        <div style="display: flex; gap: 1.5rem;">
+          <span style="color: var(--text-muted);">SQLite 3.45</span>
+          <span style="color: var(--text-muted);">Python 3.14</span>
+          <span style="color: var(--text-muted);">Django 6.1</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>
